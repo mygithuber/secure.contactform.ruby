@@ -37,7 +37,7 @@ function cleanup(msg) {
 		return msgraw.replace(/(\r\n|\n|\r)/gm,"").replace("-----BEGIN PGP MESSAGE-----Version: OpenPGP.js v0.9.0Comment: http://openpgpjs.org","").replace("-----END PGP MESSAGE-----","");
 	});
 }
-
+// trunctation with \n of pgp integrity checksum at end of pgp block needed...
 function encrypt(msg) {
 	if (msg.indexOf("-----BEGIN PGP MESSAGE-----") !== -1 && msg.indexOf("-----END PGP MESSAGE-----") !== -1) {
 		return msg;
